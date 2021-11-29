@@ -37,10 +37,14 @@ func main() {
 	// `case` expressions can be non-constants.
 	t := time.Now()
 	switch {
+	case t.Hour() < 6:
+		fmt.Println("It's before morning")
 	case t.Hour() < 12:
-		fmt.Println("It's before noon")
+		fmt.Println("It's in the morning")
+	case t.Hour() < 18:
+		fmt.Println("It's at afternoon")
 	default:
-		fmt.Println("It's after noon")
+		fmt.Println("It's at night")
 	}
 
 	// A type `switch` compares types instead of values.  You
